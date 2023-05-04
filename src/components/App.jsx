@@ -1,18 +1,21 @@
-import React from 'react';
-import PhoneContacts from './PhoneContacts/PhoneContacts';
-import Filter from './Filter/Filter';
-import { Title } from './Title/Title';
-import { ContactsForm } from './ContactsForm/ContactsForm';
-import { Layout } from './Layout/Layout.styled';
+import { Wrapper } from './App.styled';
+import { ContactList } from './ContactList/ContactList';
+import { ContactForm } from './ContactForm/ContactForm';
+import { Section } from './Section/Section';
+import { Filter } from './Filter/Filter';
 
 export function App() {
   return (
-    <Layout>
-      <Title title={'Phonebook'} />
-      <ContactsForm />
-      <Title title={'Contacts'} />
-      <Filter />
-      <PhoneContacts />
-    </Layout>
+    <Wrapper className="Reviews">
+      <Section title={'Phonebook'}>
+        <ContactForm />
+      </Section>
+
+      <Section title={'Contacts'}>
+        <Filter />
+
+        <ContactList />
+      </Section>
+    </Wrapper>
   );
 }
